@@ -1,8 +1,8 @@
 {
-  "name": "parcel-project-template",
+  "name": "goit-js-hw-10",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/BendelVolodymyr",
+  "homepage": "https://github.com/BendelVolodymyr/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
