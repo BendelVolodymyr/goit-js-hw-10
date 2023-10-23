@@ -53,10 +53,8 @@ function changeName() {
 };
 
 function getPetsList(data) {
-    let select = `<option data-placeholder="true"></option>`;
     selectEl.innerHTML = data
-        .map(({ name, id }) => select += ` <option value="${id}">${name}</option>`).join('\n');
-    return select
+        .map(({ name, id }) => '<option data-placeholder="true"></option>' + ` <option value="${id}">${name}</option>`).join('\n');
 }
 
 function resultFetchBreeds() {
