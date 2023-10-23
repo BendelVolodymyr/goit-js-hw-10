@@ -53,15 +53,25 @@ function changeName() {
 };
 
 function getPetsList(data) {
+    let select = `<option data-placeholder="true"></option>`;
     selectEl.innerHTML = data
-        .map(({ name, id }) => `<option value="${id}">${name}</option>`).join('\n');
+        .map(({ name, id }) => select += ` <option value="${id}">${name}</option>`).join('\n');
+    return select
 }
 
 function resultFetchBreeds() {
     removeClassListHidden(pLoaderEl);
     fetchBreeds().then((data) => {
-        getPetsList(data);
-    }).catch((err) => {
+       getPetsList(data);
+    }).then(data => {
+        new SlimSelect({
+            select: '#placeholder',
+            settings: {
+            placeholderText: 'Custom Placeholder Text',
+            },
+        })
+    })
+        .catch((err) => {
             removeClassListHidden(pErrorEl);
             Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
         })
