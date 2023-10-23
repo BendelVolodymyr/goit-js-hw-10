@@ -72,15 +72,3 @@ function resultFetchBreeds() {
 
 
 resultFetchBreeds();
-
-// const result = data.map(({ name, id }) => {
-//             return { text: name, value: id };
-//         });
-//         new SlimSelect({
-//             select: '.breed-select',
-//             data: result,
-//             settings: {
-//                 hideSelected: true,
-//                 placeholderText: 'Choose a cat',
-//             }
-//         });
